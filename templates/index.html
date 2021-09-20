@@ -1,0 +1,21 @@
+<html>
+<header><title>Loading</title></header>
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='loading.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <!-- <script src="{{ url_for('static', filename='script.js') }}"></script>  -->
+</head>
+<body>
+    <div class="container">
+        <form action="/generate" method="post" id='myForm' enctype="multipart/form-data">
+
+            <input type="textarea" name="prompt" placeholder="A prompt">
+            <input type="submit" value="Submit">
+
+        </form>
+        <div class="loading-container">
+                <div class="loading-state" id="loading-icon"><i class="fas fa-spinner fa-spin"></i></div>
+        </div>
+    </div>
+</body>
+</html>
