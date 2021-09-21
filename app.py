@@ -24,10 +24,9 @@ def target():
 def processing():
 	url = 'https://europe-central2-hallowed-pager-326510.cloudfunctions.net/lstm_character_generation'
 	data = request.form['prompt']
-	json_data = '{"prompt": "'+ data + '"}'
-	print(json_data)
+	data = '{"prompt": "'+ data + '"}'
 	headers = {'Content-type': 'application/json'}
-	response = requests.post(url, data=json_data, headers=headers)
+	response = requests.post(url, data=data, headers=headers)
 	text = response.text 
 	return render_template('generate.html', passed_data = text)
 
