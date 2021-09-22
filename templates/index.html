@@ -3,19 +3,32 @@
 <head>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='loading.css') }}"/>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-  <!-- <script src="{{ url_for('static', filename='script.js') }}"></script>  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <!-- <script src="{{ url_for('static', filename='script.js') }}"></script>  -->
 </head>
 <body>
     <div class="container">
-        <form action="/generate" method="post" id='myForm' enctype="multipart/form-data">
+        <form action="/generate" method="post" id="form-group" enctype="multipart/form-data">
 
             <input type="textarea" name="prompt" placeholder="Seed: un vers, o expresie etc...">
             <input type="submit" value="Submit">
 
         </form>
         <div class="loading-container">
-                <div class="loading-state" id="loading-icon"><i class="fas fa-spinner fa-spin"></i></div>
+          <h3 class="loading-quote">Making the best manea out there</h3>
+          <div class="loading-state" id="loading-icon"><i class="fas fa-spinner fa-spin"></i></div>
+        </div>
+        <div class="result-state">
+          <div class="response"></div>
+          <button class="try-again">Try Again</button>
         </div>
     </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+      let form = document.getElementById('form-group');
+      form.addEventListener('submit', showHide);
+    </script>
 </body>
 </html>

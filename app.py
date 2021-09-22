@@ -28,7 +28,7 @@ def processing():
 	headers = {'Content-type': 'application/json'}
 	response = requests.post(url, data=data, headers=headers)
 	text = response.text 
-	return render_template('generate.html', passed_data = text)
+	return text
 
 if __name__ == '__main__':
 	app.run(host = '0.0.0.0', debug=True)
