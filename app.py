@@ -22,9 +22,9 @@ def target():
 
 @app.route("/generate", methods=['GET', 'POST'])
 def processing():
-	url = 'https://europe-central2-hallowed-pager-326510.cloudfunctions.net/lstm_character_generation'
+	url = 'https://europe-central2-hallowed-pager-326510.cloudfunctions.net/lstm_word_generation'
 	data = request.form['prompt']
-	data = '{"prompt": "'+ data + '"}'
+	data = '{"seed": "'+ data + '"}'
 	headers = {'Content-type': 'application/json'}
 	response = requests.post(url, data=data, headers=headers)
 	text = response.text 
