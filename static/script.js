@@ -37,11 +37,15 @@ function toggle(toDisplay, toHide, display = 'flex') {
   toHide.style.display = 'none';
 }
 
-// Random quote. feel free to add more
+// Random quote. feel  free to add more
 const loadingQuotes = [
   'Making the best Manea out there...',
   'Wait a bit, Florin Salam doesn\'t work for free...',
-  'Boti Mocanu is thinking...'
+  'Boti Mocanu is thinking...',
+  'Guta wants to know your location...',
+  'Viseaza bombardierii masini electrice?',
+  'Reaching no. 1 in Trending...',
+  'Sending threats to dusmani...',
 ]
 
 function generateRandomQuote() {
